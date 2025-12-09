@@ -1,125 +1,146 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buddhismus – Der Weg zur Erleuchtung</title>
-    <meta name="description" content="Eine Reise in die Lehre des Buddha – Achtsamkeit, Mitgefühl und innere Ruhe.">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buddhismus – Der Weg zur Erleuchtung</title>
+  <meta name="description" content="Eine Reise in die Lehre des Buddha – Achtsamkeit, Mitgefühl und innere Ruhe.">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+ 
 <body>
  
-    <header>
-        <div class="header-content">
-            <h1>Buddhismus</h1>
-            <p>Der Edle Achtfache Pfad • Achtsamkeit • Mitgefühl</p>
+<header>
+  <div class="header-content">
+    <h1>Buddhismus</h1>
+    <p>Der Edle Achtfache Pfad • Achtsamkeit • Mitgefühl</p>
+  </div>
+</header>
+ 
+<nav>
+  <div class="nav-container">
+    <div class="logo">Buddhismus</div>
+ 
+    <ul class="nav-links">
+      <li><a href="#home" class="active">Start</a></li>
+      <li><a href="#heiligeschrift">Heilige Schrift</a></li>
+      <li><a href="#kleidung">Kleidung</a></li>
+      <li><a href="#gotteshaus">Tempel</a></li>
+      <li><a href="#symbole">Symbole</a></li>
+      <li><a href="#quiz">Quiz</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
+    </ul>
+ 
+    <div class="burger"><i class="fas fa-bars"></i></div>
+  </div>
+</nav>
+ 
+<main>
+ 
+<section id="home" class="intro">
+  <h2>Herzlich willkommen!</h2>
+  <p>Ein ruhiger Ort, um den Buddhismus zu entdecken — erstellt von<br>
+    <strong>Vladyslav, Bruno, Ornela, Mariela, Sara und Sofja</strong>
+  </p>
+</section>
+ 
+<section id="heiligeschrift">
+  <h2>Die Heilige Schrift des Buddhismus</h2>
+  <p>Die heilige Schrift heißt <strong>Tripitaka</strong> (Pali-Kanon) und besteht aus drei Teilen:<br>
+    • <strong>Vinaya</strong> – Regeln für Mönche und Nonnen<br>
+    • <strong>Sutta</strong> – Worte des Buddha<br>
+    • <strong>Abhidhamma</strong> – Analyse des Geistes
+  </p>
+</section>
+ 
+<section id="kleidung">
+  <h2>Kleidung im Buddhismus</h2>
+  <p>Mönche und Nonnen tragen einfache <strong>Kasaya-Roben</strong> in Orange oder Safran – ein Zeichen für Bescheidenheit.</p>
+</section>
+ 
+<section id="gotteshaus">
+  <h2>Tempel des Buddhismus</h2>
+  <p>Buddhistische Tempel heißen <strong>Wat</strong>, <strong>Vihara</strong> oder <strong>Pagode</strong>. Ein Ort der Meditation und Stille.</p>
+</section>
+ 
+<section id="symbole">
+  <h2>Wichtige Symbole</h2>
+ 
+  <div class="symbols-grid">
+ 
+    <div class="symbol-card">
+      <img src="https://images.pexels.com/photos/140234/pexels-photo-140234.jpeg" alt="Lotus">
+      <p><strong>Lotusblume</strong><br>Reinheit</p>
+    </div>
+ 
+    <div class="symbol-card">
+      <img src="https://images.pexels.com/photos/1006908/pexels-photo-1006908.jpeg" alt="Dharmachakra">
+      <p><strong>Dharmachakra</strong><br>Rad der Lehre</p>
+    </div>
+ 
+    <div class="symbol-card">
+      <img src="https://images.pexels.com/photos/332792/pexels-photo-332792.jpeg" alt="Bodhi-Baum">
+      <p><strong>Bodhi-Baum</strong><br>Ort der Erleuchtung</p>
+    </div>
+ 
+    <div class="symbol-card">
+      <img src="https://images.pexels.com/photos/842540/pexels-photo-842540.jpeg" alt="Knoten">
+      <p><strong>Endloser Knoten</strong><br>Alles ist verbunden</p>
+    </div>
+ 
+    <div class="symbol-card">
+      <img src="https://images.pexels.com/photos/842549/pexels-photo-842549.jpeg" alt="Muschelhorn">
+      <p><strong>Muschelhorn</strong><br>Klang der Wahrheit</p>
+    </div>
+ 
+  </div>
+</section>
+ 
+<section id="quiz">
+  <h2>Buddhismus-Quiz</h2>
+  <p>Teste dein Wissen – 12 Fragen!</p>
+  <button id="startQuiz" class="quiz-btn big">Quiz starten</button>
+ 
+  <div id="quizContainer" class="quiz-container">
+    <div class="quiz-box">
+ 
+      <div class="progress-container">
+        <div class="progress-bar">
+          <div id="progressFill"></div>
         </div>
-    </header>
+        <span id="progressText">Frage 1 von 12</span>
+      </div>
  
-    <nav>
-        <div class="nav-container">
-            <div class="logo">Buddhismus</div>
-            <ul class="nav-links">
-                <li><a href="#home" class="active">Start</a></li>
-                <li><a href="#heiligeschrift">Heilige Schrift</a></li>
-                <li><a href="#kleidung">Kleidung</a></li>
-                <li><a href="#gotteshaus">Tempel</a></li>
-                <li><a href="#symbole">Symbole</a></li>
-                <li><a href="#quiz">Quiz</a></li>
-                <li><a href="#kontakt">Kontakt</a></li>
-            </ul>
-            <div class="burger"><i class="fas fa-bars"></i></div>
-        </div>
-    </nav>
+      <h3 id="question"></h3>
+      <div id="options" class="options"></div>
  
-    <main>
-        <section id="home" class="intro">
-            <h2>Herzlich willkommen!</h2>
-            <p>Ein ruhiger und schöner Ort, um den Buddhismus zu entdecken — mit Liebe gemacht von<br>
-            <strong>Vladyslav, Bruno, Ornela, Mariela, Sara und Sofja</strong></p>
-        </section>
+      <button id="nextBtn" class="next-btn">Nächste Frage</button>
  
-        <section id="heiligeschrift">
-            <h2>Die Heilige Schrift des Buddhismus</h2>
-            <p>Die heilige Schrift heißt <strong>Tripitaka</strong> (Pali-Kanon) und besteht aus drei Teilen:<br>
-            • <strong>Vinaya</strong> – Regeln für Mönche und Nonnen<br>
-            • <strong>Sutta</strong> – Worte des Buddha<br>
-            • <strong>Abhidhamma</strong> – tiefere Analyse des Geistes</p>
-        </section>
+      <div id="result" class="result">
+        <h3>Super gemacht!</h3>
+        <p id="scoreText"></p>
+        <button onclick="location.reload()" class="quiz-btn">Noch einmal spielen</button>
+      </div>
  
-        <section id="kleidung">
-            <h2>Kleidung im Buddhismus</h2>
-            <p>Mönche und Nonnen tragen einfache <strong>Kasaya-Roben</strong> in Orange oder Safran — das steht für Bescheidenheit und Verzicht. Laien kleiden sich im Tempel respektvoll und bedeckt.</p>
-        </section>
+    </div>
+  </div>
+</section>
  
-        <section id="gotteshaus">
-            <h2>Tempel des Buddhismus</h2>
-            <p>Buddhistische Tempel heißen <strong>Wat</strong>, <strong>Vihara</strong> oder <strong>Pagode</strong>. Dort gibt es Buddha-Statuen, Räucherstäbchen und viel Ruhe — ein Ort der Meditation und Gemeinschaft.</p>
-        </section>
+<section id="kontakt">
+  <h2>Kontakt</h2>
+  <p>Mit Liebe gemacht von<br>
+    <strong>Vladyslav, Bruno, Ornela, Mariela, Sara und Sofja</strong>
+  </p>
+</section>
  
-        <section id="symbole">
-            <h2>Wichtige Symbole</h2>
-            <div class="symbols-grid">
-                <div class="symbol-card">
-                    <img loading="lazy" src="https://images.pexels.com/photos/140234/pexels-photo-140234.jpeg" alt="Lotus">
-                    <p><strong>Lotusblume</strong><br>Reinheit und Erleuchtung</p>
-                </div>
-                <div class="symbol-card">
-                    <img loading="lazy" src="https://images.pexels.com/photos/1006908/pexels-photo-1006908.jpeg" alt="Dharmachakra">
-                    <p><strong>Dharmachakra</strong><br>Rad der Lehre – 8 Speichen</p>
-                </div>
-                <div class="symbol-card">
-                    <img loading="lazy" src="https://images.pexels.com/photos/332792/pexels-photo-332792.jpeg" alt="Bodhi-Baum">
-                    <p><strong>Bodhi-Baum</strong><br>Baum der Erleuchtung</p>
-                </div>
-                <div class="symbol-card">
-                    <img loading="lazy" src="https://images.pexels.com/photos/842540/pexels-photo-842540.jpeg" alt="Endloser Knoten">
-                    <p><strong>Endloser Knoten</strong><br>Alles ist verbunden</p>
-                </div>
-                <div class="symbol-card">
-                    <img loading="lazy" src="https://images.pexels.com/photos/842549/pexels-photo-842549.jpeg" alt="Muschelhorn">
-                    <p><strong>Muschelhorn</strong><br>Der Klang der Wahrheit</p>
-                </div>
-            </div>
-        </section>
+</main>
  
-        <section id="quiz">
-            <h2>Buddhismus-Quiz</h2>
-            <p>Teste dein Wissen – 12 einfache Fragen!</p>
-            <button id="startQuiz" class="quiz-btn big">Quiz starten</button>
+<footer>
+  <p>© 2025 – Buddhismus Projekt</p>
+</footer>
  
-            <div id="quizContainer" class="quiz-container">
-                <div class="quiz-box">
-                    <div class="progress-container">
-                        <div id="progressBar" class="progress-bar"></div>
-                        <span id="progressText">Frage 1 von 12</span>
-                    </div>
-                    <h3 id="question"></h3>
-                    <div id="options" class="options"></div>
-                    <button id="nextBtn" class="next-btn">Nächste Frage</button>
- 
-                    <div id="result" class="result">
-                        <h3>Super gemacht!</h3>
-                        <p id="scoreText"></p>
-                        <button onclick="location.reload()" class="quiz-btn">Noch einmal spielen</button>
-                    </div>
-                </div>
-            </div>
-        </section>
- 
-        <section id="kontakt">
-            <h2>Kontakt</h2>
-            <p>Mit Liebe und Achtsamkeit erstellt von<br>
-            <strong>Vladyslav, Bruno, Ornela, Mariela, Sara und Sofja</strong></p>
-        </section>
-    </main>
- 
-    <footer>
-        <p>© 2025 – Mit viel Liebe und Achtsamkeit gemacht von Vladyslav, Bruno, Ornela, Mariela, Sara und Sofja</p>
-    </footer>
- 
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
