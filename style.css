@@ -1,95 +1,194 @@
-// Бургер-меню
-document.querySelector('.burger').addEventListener('click', () => {
-    document.querySelector('.nav-links').classList.toggle('active');
-});
- 
-// Плавный скролл
-document.querySelectorAll('nav a').forEach(link => {
-    link.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
-        document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
-        this.classList.add('active');
-        document.querySelector('.nav-links').classList.remove('active');
-    });
-});
- 
-// Квиз
-const questions = [
-    {q: "Wie hieß der Buddha vor der Erleuchtung?", a: "Siddhartha Gautama"},
-    {q: "Was bedeutet „Buddha“?", a: "Der Erwachte"},
-    {q: "Wie viele Edle Wahrheiten gibt es?", a: "4"},
-    {q: "Wie viele Schritte hat der Edle Achtfache Pfad?", a: "8"},
-    {q: "Wie heißt die heilige Schrift?", a: "Tripitaka"},
-    {q: "Welche Farbe haben Mönchsroben meistens?", a: "Orange"},
-    {q: "Wie heißt ein buddhistischer Tempel oft?", a: "Wat"},
-    {q: "Welche Blume steht für Reinheit?", a: "Lotusblume"},
-    {q: "Welches Rad symbolisiert die Lehre?", a: "Dharmachakra"},
-    {q: "Unter welchem Baum wurde Buddha erleuchtet?", a: "Bodhi-Baum"},
-    {q: "Was bedeutet der Endlose Knoten?", a: "Alles ist verbunden"},
-    {q: "Was macht das Muschelhorn?", a: "Der Klang der Wahrheit"}
-];
- 
-let current = 0;
-let score = 0;
- 
-document.getElementById('startQuiz').onclick = () => {
-    document.getElementById('quizContainer').classList.add('active');
-    document.getElementById('startQuiz').style.display = 'none';
-    showQuestion();
-};
- 
-function showQuestion() {
-    if (current >= questions.length) {
-        showResult();
-        return;
-    }
- 
-    // Прогресс
-    const percent = ((current + 1) / questions.length) * 100;
-    document.querySelector('#progressBar::before').style.width = percent + '%';
-    document.getElementById('progressText').textContent = `Frage \( {current + 1} von \){questions.length}`;
- 
-    document.getElementById('question').textContent = questions[current].q;
- 
-    const opts = document.getElementById('options');
-    opts.innerHTML = '';
- 
-    const answers = [questions[current].a, "Nirvana", "Karma", "Dharma"].sort(() => Math.random() - 0.5);
- 
-    answers.forEach(ans => {
-        const div = document.createElement('div');
-        div.textContent = ans;
-        div.onclick = () => selectAnswer(ans === questions[current].a, div);
-        opts.appendChild(div);
-    });
- 
-    document.getElementById('nextBtn').style.display = 'none';
-    document.getElementById('result').style.display = 'none';
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: #f6f2eb;
+  color: #2d1e12;
 }
  
-function selectAnswer(correct, el) {
-    if (correct) score++;
- 
-    // Показать правильно/неправильно
-    document.querySelectorAll('#options div').forEach(d => {
-        if (d.textContent === questions[current].a) d.classList.add('correct');
-        else d.classList.add('wrong');
-        d.onclick = null;
-    });
- 
-    document.getElementById('nextBtn').style.display = 'block';
+header {
+  background: url('https://images.pexels.com/photos/161223/background.jpg') center/cover no-repeat;
+  padding: 6rem 2rem;
+  text-align: center;
+  color: white;
 }
  
-document.getElementById('nextBtn').onclick = () => {
-    current++;
-    showQuestion();
-};
- 
-function showResult() {
-    document.getElementById('question').textContent = 'Fertig!';
-    document.getElementById('options').innerHTML = '';
-    document.getElementById('nextBtn').style.display = 'none';
-    document.getElementById('result').style.display = 'block';
-    document.getElementById('scoreText').textContent = `\( {score} von \){questions.length} richtig`;
+header h1 {
+  font-size: 4rem;
+  font-family: 'Cormorant Garamond';
 }
+ 
+nav {
+  background: #d4a574;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+ 
+.nav-container {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+ 
+.logo {
+  font-weight: 600;
+  color: white;
+  font-size: 1.3rem;
+}
+ 
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+ 
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+}
+ 
+.nav-links a.active {
+  border-bottom: 2px solid white;
+}
+ 
+/* BURGER */
+.burger {
+  display: none;
+  color: white;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+ 
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: #d4a574;
+    width: 200px;
+    flex-direction: column;
+    padding: 1rem;
+    align-items: center;
+    display: none;
+  }
+  .nav-links.active {
+    display: flex;
+  }
+  .burger {
+    display: block;
+  }
+}
+ 
+/* INTRO */
+.intro {
+  padding: 3rem 2rem;
+  text-align: center;
+}
+ 
+section {
+  padding: 3rem 2rem;
+}
+ 
+/* SYMBOLS */
+.symbols-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+}
+ 
+.symbol-card {
+  background: white;
+  padding: 1rem;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  text-align: center;
+}
+ 
+.symbol-card img {
+  width: 100%;
+  border-radius: 12px;
+}
+ 
+/* QUIZ */
+.quiz-container {
+  display: none;
+  margin-top: 2rem;
+}
+ 
+.quiz-container.active {
+  display: block;
+}
+ 
+.quiz-box {
+  background: white;
+  padding: 2rem;
+  border-radius: 18px;
+  max-width: 700px;
+  margin: auto;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+ 
+.progress-container {
+  margin-bottom: 1.5rem;
+}
+ 
+.progress-bar {
+  height: 10px;
+  background: #efdfcf;
+  border-radius: 5px;
+}
+ 
+#progressFill {
+  height: 100%;
+  width: 0%;
+  background: #d4a574;
+  border-radius: 5px;
+  transition: width 0.4s ease;
+}
+ 
+.options {
+  margin: 1.5rem 0;
+  display: grid;
+  gap: 1rem;
+}
+ 
+.options div {
+  background: #f3e5d4;
+  padding: 1rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+ 
+.options div:hover {
+  background: #d4a574;
+  color: white;
+}
+ 
+.correct { background: #2ecc71 !important; color: white !important; }
+.wrong { background: #e74c3c !important; color: white !important; }
+ 
+.next-btn, .quiz-btn.big {
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  background: #d4a574;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  display: none;
+}
+ 
+.result {
+  display: none;
+  margin-top: 2rem;
+  background: #f4e8d7;
+  padding: 1.5rem;
+  border-radius: 14px;
+  text-align: center;
+}
+ 
