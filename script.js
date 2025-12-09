@@ -1,118 +1,94 @@
-// Бургер-меню
-document.querySelector('.burger').addEventListener('click', () => {
-    document.querySelector('.nav-links').classList.toggle('active');
-});
-
-// Плавный скролл и активное меню
-document.querySelectorAll('nav a').forEach(link => {
-    link.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        target.scrollIntoView({ behavior: 'smooth' });
-        document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
-        this.classList.add('active');
-        document.querySelector('.nav-links').classList.remove('active');
-    });
-});
-
-// Подсветка при скролле и анимация fade-in
-window.addEventListener('scroll', () => {
-    let current = '';
-    document.querySelectorAll('section').forEach(section => {
-        const sectionTop = section.offsetTop - 150;
-        if (scrollY >= sectionTop) {
-            current = section.getAttribute('id');
-            section.classList.add('fade-in');
-        }
-    });
-    document.querySelectorAll('nav a').forEach(a => {
-        a.classList.remove('active');
-        if (a.getAttribute('href') === `#${current}`) a.classList.add('active');
-    });
-});
-
-// Квиз
-const questions = [
-    { q: "Wie hieß der Buddha vor seiner Erleuchtung?", a: "Siddhartha Gautama" },
-    { q: "Was bedeutet das Wort „Buddha“ wörtlich?", a: "Der Erwachte" },
-    { q: "Wie viele Edle Wahrheiten gibt es?", a: "Vier" },
-    { q: "Wie viele Schritte hat der Edle Achtfache Pfad?", a: "Acht" },
-    { q: "Was ist das wichtigste Ziel im Buddhismus?", a: "Erleuchtung" },
-    { q: "Wie heißt die heilige Schrift des Buddhismus?", a: "Tripitaka" },
-    { q: "Welche Farbe haben die Roben der Mönche meistens?", a: "Orange" },
-    { q: "Warum tragen Mönche einfache Kleidung?", a: "Bescheidenheit" },
-    { q: "Wie nennt man ein buddhistisches Kloster/Tempel?", a: "Wat" },
-    { q: "Welche Blume symbolisiert Reinheit und Erleuchtung?", a: "Lotusblume" },
-    { q: "Welches Rad steht für die Lehre des Buddha?", a: "Dharmachakra" },
-    { q: "Unter welchem Baum wurde Buddha erleuchtet?", a: "Bodhi-Baum" }
-];
-
-let currentQuestion = 0;
-let score = 0;
-
-document.getElementById('startQuiz').addEventListener('click', () => {
-    document.getElementById('quizContainer').classList.remove('quiz-hidden');
-    document.getElementById('startQuiz').style.display = 'none';
-    showQuestion();
-});
-
-function showQuestion() {
-    if (currentQuestion >= questions.length) {
-        showResult();
-        return;
-    }
-
-    updateProgress();
-
-    const q = questions[currentQuestion];
-    document.getElementById('question').innerText = `Frage \( {currentQuestion + 1}/12: \){q.q}`;
-
-    const optionsDiv = document.getElementById('options');
-    optionsDiv.innerHTML = '';
-
-    const wrong = ['Nirvana', 'Karma', 'Dharma', 'Sangha', 'Vihara', 'Pagode', 'Rot', 'Safran', 'Luxus', 'Tempel', 'Rose', 'Rad'].sort(() => Math.random() - 0.5).slice(0, 3);
-    const allOptions = [q.a, ...wrong].sort(() => Math.random() - 0.5);
-
-    allOptions.forEach(opt => {
-        const btn = document.createElement('div');
-        btn.className = 'option';
-        btn.innerText = opt;
-        btn.onclick = () => checkAnswer(opt === q.a, btn);
-        optionsDiv.appendChild(btn);
-    });
-
-    document.getElementById('nextBtn').style.display = 'none';
+/* такой же как раньше, только добавил надёжные стили для квиза */
+.quiz-container { display: none; margin-top: 3rem; }
+.quiz-container.active { display: block; }
+ 
+.quiz-box {
+    background: white;
+    padding: 2.5rem 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
 }
-
-function checkAnswer(correct, btn) {
-    if (correct) {
-        score++;
-        btn.style.background = '#4caf50';
-    } else {
-        btn.style.background = '#f44336';
-    }
-    btn.style.color = 'white';
-
-    document.querySelectorAll('.option').forEach(b => b.onclick = null);
-    document.getElementById('nextBtn').style.display = 'block';
+ 
+.progress-container {
+    margin-bottom: 2rem;
+    text-align: left;
 }
-
-document.getElementById('nextBtn').addEventListener('click', () => {
-    currentQuestion++;
-    showQuestion();
-});
-
-function showResult() {
-    document.getElementById('question').innerText = 'Quiz beendet!';
-    document.getElementById('options').innerHTML = '';
-    document.getElementById('nextBtn').style.display = 'none';
-    document.getElementById('progress').style.display = 'none';
-    document.getElementById('result').classList.remove('result-hidden');
-    document.getElementById('result').innerHTML = `<h3>Dein Ergebnis</h3><p class="score-big">\( {score} von \){questions.length} richtig!</p><button onclick="location.reload()" class="quiz-btn">Nochmal spielen</button>`;
+ 
+.progress-bar {
+    height: 8px;
+    background: #f0e6d9;
+    border-radius: 4px;
+    overflow: hidden;
 }
-
-function updateProgress() {
-    const progress = document.getElementById('progress');
-    const width = ((currentQuestion + 1) / questions.length) * 100;
-    progress.style.background = `linear-gradient(to right, var(--accent) \( {width}%, var(--light) \){width}%)`;
+ 
+#progressBar::before {
+    content: '';
+    display: block;
+    height: 100%;
+    background: #d4a574;
+    width: 8.33%;
+    transition: width 0.6s ease;
+}
+ 
+#progressText {
+    display: block;
+    margin-top: 0.5rem;
+    font-weight: 600;
+    color: #d4a574;
+}
+ 
+#question {
+    font-size: 1.5rem;
+    margin: 1.5rem 0;
+    line-height: 1.5;
+}
+ 
+.options {
+    display: grid;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+ 
+.options div {
+    padding: 1.2rem;
+    background: #f5e6d3;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+}
+ 
+.options div:hover { background: #d4a574; color: white; }
+.options div.correct { background: #27ae60 !important; color: white; }
+.options div.wrong { background: #e74c3c !important; color: white; }
+ 
+.next-btn, .quiz-btn.big {
+    padding: 1rem 3rem;
+    font-size: 1.2rem;
+    background: #d4a574;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+ 
+.result {
+    display: none;
+    margin-top: 2rem;
+    padding: 2rem;
+    background: #f5e6d3;
+    border-radius: 16px;
+}
+ 
+.result h3 { color: #d4a574; margin-bottom: 1rem; }
+#scoreText { font-size: 2rem; font-weight: bold; color: #2d1e12; }
+ 
+@media (max-width: 768px) {
+    .quiz-box { padding: 2rem 1.5rem; }
+    #question { font-size: 1.3rem; }
+    .options div { padding: 1.4rem; font-size: 1.1rem; }
 }
