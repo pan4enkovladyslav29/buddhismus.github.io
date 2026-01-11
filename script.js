@@ -53,3 +53,16 @@ function showFinalResult() {
 
   resultEl.innerHTML = \( {emoji}<br>Du hast <strong> \){score}</strong> von <strong>\( {total}</strong> richtig!<br><small> \){message}</small>;
 }
+let score = 0;
+let answered = 0;
+const total = 6;
+
+function toggleMenu() {
+  document.getElementById("menu").classList.toggle("show");
+}
+
+function closeMenu() {
+  document.getElementById("menu").classList.remove("show");
+}
+
+// ... остальной код викторины остаётся без изменений ...
