@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <title>Buddhismus</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Buddhismus</title>
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
-
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
@@ -17,28 +14,24 @@
 <header>
     <h1>Buddhismus</h1>
     <p>Diese Website wurde erstellt von:<br>
-        <strong>Vladyslav, Bruno, Ornela, Sofja, Mariela, Sara</strong>
-    </p>
+    <strong>Vladyslav, Bruno, Ornela, Sofja, Mariela, Sara</strong></p>
 </header>
 
-<!-- BURGER -->
 <div class="burger" onclick="toggleMenu()">
     <i class="fas fa-bars"></i>
 </div>
 
 <nav id="menu">
-    <a href="#kleidung"><i class="fas fa-tshirt"></i> Kleidung</a>
-    <a href="#gotteshaus"><i class="fas fa-gopuram"></i> Gotteshaus</a>
-    <a href="#gottesbild"><i class="fas fa-om"></i> Gottesbild</a>
-    <a href="#schrift"><i class="fas fa-book"></i> Heilige Schrift</a>
-    <a href="#feste"><i class="fas fa-lantern"></i> Feste</a>
-    <a href="#rituale"><i class="fas fa-spa"></i> Rituale</a>
-    <a href="#regeln"><i class="fas fa-balance-scale"></i> Lebensregeln</a>
-    <a href="#symbole"><i class="fas fa-dharmachakra"></i> Symbole</a>
-    <a href="#quiz"><i class="fas fa-question-circle"></i> Quiz</a>
+    <a href="#kleidung">Kleidung</a>
+    <a href="#gotteshaus">Gotteshaus</a>
+    <a href="#gottesbild">Gottesbild</a>
+    <a href="#schrift">Heilige Schrift</a>
+    <a href="#feste">Feste</a>
+    <a href="#rituale">Rituale</a>
+    <a href="#regeln">Lebensregeln</a>
+    <a href="#symbole">Symbole</a>
+    <a href="#quiz">Quiz</a>
 </nav>
-
-<!-- SECTIONS -->
 
 <section id="kleidung">
 <h2>🧥 Kleidung</h2>
@@ -60,13 +53,13 @@
 
 <section id="schrift">
 <h2>📜 Heilige Schrift</h2>
-<p>Die wichtigsten Schriften heißen Tripitaka. Sie enthalten Buddhas Lehren.</p>
+<p>Die wichtigsten buddhistischen Schriften heißen Tripitaka. Sie enthalten Buddhas Lehren.</p>
 <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Buddhist_scriptures.jpg">
 </section>
 
 <section id="feste">
 <h2>🏮 Feste</h2>
-<p>Vesakh ist das wichtigste buddhistische Fest.</p>
+<p>Vesakh ist das wichtigste buddhistische Fest. Es erinnert an Geburt, Erleuchtung und Tod Buddhas.</p>
 <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Vesak_festival_lanterns.jpg">
 </section>
 
@@ -78,20 +71,20 @@
 
 <section id="regeln">
 <h2>⚖️ Lebensregeln</h2>
-<p>Die fünf Silas geben moralische Regeln für das Leben vor.</p>
+<p>Die fünf Silas lehren zum Beispiel: nicht töten, nicht stehlen, ehrlich sein.</p>
 <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Buddhist_monk_walking.jpg">
 </section>
 
 <section id="symbole">
 <h2>☸️ Symbole</h2>
-<p>Lotusblume, Dharma-Rad und Buddha-Statuen sind wichtige Symbole.</p>
+<p>Lotusblume und Dharma-Rad sind wichtige Symbole im Buddhismus.</p>
 <img src="https://upload.wikimedia.org/wikipedia/commons/8/8e/Dharma_Wheel.svg">
 </section>
 
 <section id="quiz">
 <h2>❓ Quiz</h2>
 
-<p>1. Wie heißt das buddhistische Gotteshaus?</p>
+<p>1. Wie nennt man das buddhistische Gotteshaus?</p>
 <button onclick="checkAnswer(this,true)">Tempel</button>
 <button onclick="checkAnswer(this,false)">Kirche</button>
 
@@ -99,9 +92,21 @@
 <button onclick="checkAnswer(this,false)">Ja</button>
 <button onclick="checkAnswer(this,true)">Nein</button>
 
-<p>3. Wichtigstes Fest?</p>
+<p>3. Wie heißt das wichtigste Fest?</p>
 <button onclick="checkAnswer(this,true)">Vesakh</button>
 <button onclick="checkAnswer(this,false)">Ostern</button>
+
+<p>4. Wie heißen die heiligen Schriften?</p>
+<button onclick="checkAnswer(this,true)">Tripitaka</button>
+<button onclick="checkAnswer(this,false)">Bibel</button>
+
+<p>5. Was ist ein wichtiges Ritual?</p>
+<button onclick="checkAnswer(this,true)">Meditation</button>
+<button onclick="checkAnswer(this,false)">Taufe</button>
+
+<p>6. Welches Symbol gehört zum Buddhismus?</p>
+<button onclick="checkAnswer(this,true)">Dharma-Rad</button>
+<button onclick="checkAnswer(this,false)">Kreuz</button>
 
 <p id="result"></p>
 </section>
