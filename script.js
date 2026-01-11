@@ -1,5 +1,6 @@
 let score = 0;
 let answered = 0;
+const total = 6;
 
 function toggleMenu() {
     document.getElementById("menu").classList.toggle("show");
@@ -8,8 +9,8 @@ function toggleMenu() {
 function checkAnswer(btn, correct) {
     if (btn.classList.contains("done")) return;
 
-    answered++;
     btn.classList.add("done");
+    answered++;
 
     if (correct) {
         score++;
@@ -18,8 +19,8 @@ function checkAnswer(btn, correct) {
         btn.style.background = "red";
     }
 
-    if (answered === 3) {
+    if (answered === total) {
         document.getElementById("result").innerText =
-            "Du hast " + score + " von 3 richtig!";
+        "Ergebnis: " + score + " von " + total + " richtig.";
     }
 }
