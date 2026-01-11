@@ -3,24 +3,25 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #f2f5f3;
+    background: #f3f5f4;
 }
 
 header {
     background: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
     url("https://upload.wikimedia.org/wikipedia/commons/0/0b/Buddhist_mountain_temple.jpg");
     background-size: cover;
+    background-position: center;
     color: white;
     text-align: center;
-    padding: 70px 20px;
+    padding: 80px 20px;
 }
 
 .burger {
     background: #4f6f52;
     color: white;
+    text-align: center;
     padding: 15px;
     font-size: 22px;
-    text-align: center;
     cursor: pointer;
 }
 
@@ -48,20 +49,15 @@ nav.show {
 section {
     background: white;
     max-width: 900px;
-    margin: 25px auto;
-    padding: 20px;
-    border-radius: 14px;
+    margin: 30px auto;
+    padding: 22px;
+    border-radius: 16px;
     box-shadow: 0 10px 25px rgba(0,0,0,.12);
-    transition: transform .3s;
-}
-
-section:hover {
-    transform: translateY(-5px);
 }
 
 section img {
     width: 100%;
-    border-radius: 10px;
+    border-radius: 12px;
     margin-top: 15px;
 }
 
@@ -73,13 +69,19 @@ button {
     background: #4f6f52;
     color: white;
     border: none;
-    padding: 10px 14px;
-    margin: 6px;
+    padding: 10px 15px;
+    margin: 5px;
     border-radius: 6px;
+    cursor: pointer;
+}
+
+#result {
+    margin-top: 15px;
+    font-weight: bold;
 }
 
 footer {
+    background: #ddd;
     text-align: center;
     padding: 20px;
-    background: #ddd;
 }
