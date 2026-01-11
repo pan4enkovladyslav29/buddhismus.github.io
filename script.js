@@ -1,22 +1,25 @@
 let score = 0;
 let answered = 0;
 
-function checkAnswer(button, correct) {
-    if (button.classList.contains("done")) return;
+function toggleMenu() {
+    document.getElementById("menu").classList.toggle("show");
+}
+
+function checkAnswer(btn, correct) {
+    if (btn.classList.contains("done")) return;
 
     answered++;
+    btn.classList.add("done");
 
     if (correct) {
         score++;
-        button.style.background = "green";
+        btn.style.background = "green";
     } else {
-        button.style.background = "red";
+        btn.style.background = "red";
     }
-
-    button.classList.add("done");
 
     if (answered === 3) {
         document.getElementById("result").innerText =
-            "Du hast " + score + " von 3 Fragen richtig beantwortet!";
+            "Du hast " + score + " von 3 richtig!";
     }
 }
