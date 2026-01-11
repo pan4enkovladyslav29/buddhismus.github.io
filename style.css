@@ -4,170 +4,162 @@
 
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, BlinkMacOSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-  background: linear-gradient(135deg, rgba(60, 90, 70, 0.75), rgba(140, 180, 150, 0.65)),
-              url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
-  background-size: cover;
-  color: #1e2e22;
-  line-height: 1.6;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  background: linear-gradient(135deg, rgba(245,250,245,0.9), rgba(230,245,235,0.85));
+  color: #1a3c2e;
+  line-height: 1.65;
+  min-height: 100vh;
 }
 
 header {
   text-align: center;
-  padding: 90px 20px 50px;
+  padding: 80px 20px 40px;
+  background: linear-gradient(to bottom, rgba(60,100,80,0.75), rgba(60,100,80,0.15));
   color: white;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.85);
-  background: linear-gradient(to bottom, rgba(0,0,0,0.4), transparent 70%);
+  text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+}
+
+.header-content {
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .burger {
-  background: rgba(60, 90, 70, 0.9);
-  color: white;
-  text-align: center;
-  padding: 14px;
-  font-size: 28px;
-  cursor: pointer;
   position: fixed;
-  top: 0;
-  width: 100%;
+  top: 12px;
+  right: 16px;
   z-index: 1000;
+  background: rgba(60,100,80,0.85);
+  color: white;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
   backdrop-filter: blur(4px);
 }
 
 nav {
-  display: none;
-  background: rgba(60, 90, 70, 0.92);
   position: fixed;
-  top: 56px;
+  top: 0;
+  left: 100%;
   width: 100%;
+  height: 100%;
+  background: rgba(45,75,60,0.96);
+  backdrop-filter: blur(10px);
+  transition: left 0.4s ease;
   z-index: 999;
+  display: flex;
   flex-direction: column;
-  backdrop-filter: blur(6px);
+  justify-content: center;
+  align-items: center;
+}
+
+nav.show {
+  left: 0;
 }
 
 nav a {
   color: white;
-  padding: 16px 24px;
   text-decoration: none;
-  font-weight: 500;
-  transition: all 0.2s ease;
+  font-size: 1.35rem;
+  padding: 20px 40px;
+  margin: 8px 0;
+  transition: all 0.3s;
+  width: 100%;
+  text-align: center;
 }
 
 nav a:hover {
   background: rgba(255,255,255,0.12);
-  padding-left: 32px;
-}
-
-nav.show {
-  display: flex;
+  transform: scale(1.05);
 }
 
 main {
   max-width: 920px;
-  margin: 120px auto 80px;
+  margin: 40px auto 80px;
   padding: 0 18px;
 }
 
 .card {
-  background: rgba(255,255,255,0.94);
-  backdrop-filter: blur(8px);
-  margin-bottom: 40px;
-  padding: 28px 24px;
+  background: white;
   border-radius: 20px;
-  box-shadow: 0 14px 32px rgba(0,0,0,0.14);
-  transition: all 0.28s ease;
+  padding: 28px 24px;
+  margin-bottom: 40px;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
 }
 
 .card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.18);
-}
-
-h2 {
-  color: #2e5d3f;
-  margin: 0 0 16px;
-  font-size: 1.9rem;
+  transform: translateY(-6px);
+  box-shadow: 0 20px 44px rgba(0,0,0,0.14);
 }
 
 .card img {
   width: 100%;
   height: auto;
-  margin-top: 18px;
   border-radius: 14px;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+  margin-top: 18px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
 }
 
-.quiz-question {
-  margin: 28px 0;
-  padding: 18px;
-  background: rgba(240,245,242,0.6);
-  border-radius: 12px;
+h2 {
+  color: #1e5a3f;
+  margin-bottom: 0.9em;
+  font-size: 2rem;
 }
 
+/* Кнопки викторины — спокойный стиль */
 button {
-  background: #3a6b4f;
+  background: #3a6b52;
   color: white;
   border: none;
   padding: 12px 22px;
-  margin: 8px 8px 8px 0;
-  border-radius: 10px;
+  margin: 8px 10px 8px 0;
+  border-radius: 12px;
   cursor: pointer;
-  font-weight: 600;
-  transition: all 0.2s ease;
+  font-weight: 550;
+  transition: all 0.25s;
 }
 
 button:hover:not(.done) {
-  background: #2e5d3f;
-  transform: translateY(-1px);
+  background: #2e5944;
 }
 
-button.done.correct {
-  background: #4caf50 !important;
-  box-shadow: 0 0 18px rgba(76,175,80,0.6);
-}
-
-button.done.incorrect {
-  background: #e53935 !important;
-  box-shadow: 0 0 18px rgba(229,57,53,0.5);
-}
-
-.result-message {
-  font-weight: bold;
-  font-size: 1.4rem;
-  margin-top: 40px;
-  padding: 22px;
-  border-radius: 14px;
-  text-align: center;
-  color: white;
-  background: #3a6b4f;
-  animation: fadeIn 1s ease;
-}
+button.done.correct   { background: #4a8c5a !important; }
+button.done.incorrect { background: #a63a3a !important; }
 
 footer {
   text-align: center;
-  padding: 30px;
-  background: rgba(0,0,0,0.6);
-  color: #eee;
+  padding: 40px 20px;
+  color: #555;
   font-size: 0.95rem;
+  background: rgba(245,250,245,0.6);
 }
 
-/* Адаптив */
+/* Медиа-запросы */
 @media (min-width: 768px) {
   .burger { display: none; }
   nav {
-    display: flex !important;
     position: static;
+    left: 0;
+    height: auto;
+    width: auto;
+    background: transparent;
     flex-direction: row;
     justify-content: center;
-    background: rgba(60,90,70,0.75);
-    backdrop-filter: blur(8px);
-    padding: 12px 0;
+    gap: 12px;
+    margin: 20px 0;
   }
-  main { margin-top: 60px; }
-}
-
-/* Анимация */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to   { opacity: 1; transform: translateY(0); }
+  nav a {
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    border-radius: 12px;
+    background: rgba(60,100,80,0.75);
+  }
+  nav a:hover { background: rgba(60,100,80,0.95); }
 }
