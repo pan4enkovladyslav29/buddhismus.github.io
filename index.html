@@ -2,11 +2,14 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buddhismus</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- ✅ CSS ПОДКЛЮЧЕН ПРАВИЛЬНО -->
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
@@ -18,96 +21,95 @@
     </p>
 </header>
 
-<nav>
-    <a href="#kleidung">Kleidung</a>
-    <a href="#gotteshaus">Gotteshaus</a>
-    <a href="#gottesbild">Gottesbild</a>
-    <a href="#schrift">Heilige Schrift</a>
-    <a href="#feste">Feste</a>
-    <a href="#rituale">Rituale</a>
-    <a href="#regeln">Lebensregeln</a>
-    <a href="#symbole">Symbole</a>
-    <a href="#quiz">Quiz</a>
+<!-- BURGER -->
+<div class="burger" onclick="toggleMenu()">
+    <i class="fas fa-bars"></i>
+</div>
+
+<nav id="menu">
+    <a href="#kleidung"><i class="fas fa-tshirt"></i> Kleidung</a>
+    <a href="#gotteshaus"><i class="fas fa-gopuram"></i> Gotteshaus</a>
+    <a href="#gottesbild"><i class="fas fa-om"></i> Gottesbild</a>
+    <a href="#schrift"><i class="fas fa-book"></i> Heilige Schrift</a>
+    <a href="#feste"><i class="fas fa-lantern"></i> Feste</a>
+    <a href="#rituale"><i class="fas fa-spa"></i> Rituale</a>
+    <a href="#regeln"><i class="fas fa-balance-scale"></i> Lebensregeln</a>
+    <a href="#symbole"><i class="fas fa-dharmachakra"></i> Symbole</a>
+    <a href="#quiz"><i class="fas fa-question-circle"></i> Quiz</a>
 </nav>
 
+<!-- SECTIONS -->
+
 <section id="kleidung">
-    <h2>Kleidung</h2>
-    <p>
-        Buddhistische Mönche und Nonnen tragen einfache Roben in Orange, Rot oder Braun.
-        Diese Kleidung steht für Bescheidenheit und Verzicht.
-    </p>
-    <img src="https://images.unsplash.com/photo-1508672019048-805c876b67e2f" alt="Buddhistische Kleidung">
+<h2>🧥 Kleidung</h2>
+<p>Buddhistische Mönche und Nonnen tragen einfache Roben in Orange, Rot oder Braun. Sie stehen für Bescheidenheit.</p>
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Buddhist_monks_in_Thailand.jpg">
 </section>
 
 <section id="gotteshaus">
-    <h2>Gotteshaus</h2>
-    <p>
-        Das Gotteshaus im Buddhismus ist der Tempel oder die Pagode.
-        Dort wird meditiert und gebetet.
-    </p>
-    <img src="https://images.unsplash.com/photo-1549692520-acc6669e2f0c" alt="Buddhistischer Tempel">
+<h2>🏯 Gotteshaus</h2>
+<p>Das Gotteshaus im Buddhismus ist der Tempel oder die Pagode. Dort wird meditiert und gebetet.</p>
+<img src="https://upload.wikimedia.org/wikipedia/commons/1/1a/Buddhist_temple_in_Chiang_Mai.jpg">
 </section>
 
 <section id="gottesbild">
-    <h2>Gottesbild</h2>
-    <p>
-        Im Buddhismus gibt es keinen Gott wie in anderen Religionen.
-        Buddha ist ein erleuchteter Lehrer.
-    </p>
-    <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93" alt="Buddha Statue">
+<h2>🪷 Gottesbild</h2>
+<p>Buddha ist kein Gott, sondern ein erleuchteter Lehrer und Vorbild.</p>
+<img src="https://upload.wikimedia.org/wikipedia/commons/5/5d/Buddha_statue_in_meditation.jpg">
 </section>
 
 <section id="schrift">
-    <h2>Heilige Schrift</h2>
-    <p>
-        Die heiligen Schriften des Buddhismus heißen Tripitaka.
-        Sie enthalten Buddhas Lehren.
-    </p>
-    <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f" alt="Heilige Schrift">
+<h2>📜 Heilige Schrift</h2>
+<p>Die wichtigsten Schriften heißen Tripitaka. Sie enthalten Buddhas Lehren.</p>
+<img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Buddhist_scriptures.jpg">
 </section>
 
 <section id="feste">
-    <h2>Feste</h2>
-    <p>
-        Vesakh ist das wichtigste buddhistische Fest.
-        Es erinnert an Geburt, Erleuchtung und Tod Buddhas.
-    </p>
-    <img src="https://images.unsplash.com/photo-1558637845-4b44f6b5b04c" alt="Buddhistisches Fest">
+<h2>🏮 Feste</h2>
+<p>Vesakh ist das wichtigste buddhistische Fest.</p>
+<img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Vesak_festival_lanterns.jpg">
 </section>
 
 <section id="rituale">
-    <h2>Rituale</h2>
-    <p>
-        Meditation, Mantras und Opfergaben gehören zu den wichtigsten Ritualen im Buddhismus.
-    </p>
-    <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba" alt="Meditation">
+<h2>🧘 Rituale</h2>
+<p>Meditation, Mantras und Räucherstäbchen gehören zu den wichtigsten Ritualen.</p>
+<img src="https://upload.wikimedia.org/wikipedia/commons/9/9d/Buddhist_meditation.jpg">
 </section>
 
 <section id="regeln">
-    <h2>Lebensregeln</h2>
-    <p>
-        Die fünf Silas sind wichtige Lebensregeln, zum Beispiel nicht töten,
-        nicht stehlen und ehrlich sein.
-    </p>
-    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" alt="Lebensregeln">
+<h2>⚖️ Lebensregeln</h2>
+<p>Die fünf Silas geben moralische Regeln für das Leben vor.</p>
+<img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Buddhist_monk_walking.jpg">
 </section>
 
 <section id="symbole">
-    <h2>Symbole</h2>
-    <p>
-        Wichtige Symbole im Buddhismus sind der Lotus, das Dharma-Rad und Buddha-Statuen.
-    </p>
-    <img src="https://images.unsplash.com/photo-1508264165352-258859e62245" alt="Buddhistische Symbole">
+<h2>☸️ Symbole</h2>
+<p>Lotusblume, Dharma-Rad und Buddha-Statuen sind wichtige Symbole.</p>
+<img src="https://upload.wikimedia.org/wikipedia/commons/8/8e/Dharma_Wheel.svg">
 </section>
 
 <section id="quiz">
-    <h2>Quiz</h2>
+<h2>❓ Quiz</h2>
 
-    <div class="quiz-question">
-        <p>1. Wie nennt man das buddhistische Gotteshaus?</p>
-        <button onclick="checkAnswer(this, true)">Tempel</button>
-        <button onclick="checkAnswer(this, false)">Kirche</button>
-    </div>
+<p>1. Wie heißt das buddhistische Gotteshaus?</p>
+<button onclick="checkAnswer(this,true)">Tempel</button>
+<button onclick="checkAnswer(this,false)">Kirche</button>
 
-    <div class="quiz-question">
-        <p>2. I
+<p>2. Ist Buddha ein Gott?</p>
+<button onclick="checkAnswer(this,false)">Ja</button>
+<button onclick="checkAnswer(this,true)">Nein</button>
+
+<p>3. Wichtigstes Fest?</p>
+<button onclick="checkAnswer(this,true)">Vesakh</button>
+<button onclick="checkAnswer(this,false)">Ostern</button>
+
+<p id="result"></p>
+</section>
+
+<footer>
+<p>© Buddhismus Website</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
